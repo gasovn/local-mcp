@@ -25,7 +25,7 @@ make build
 
 ## Configuration
 
-Configure as MCP server in your editor settings:
+(Zed IDE) Configure as MCP server in your editor settings:
 
 ```json
 {
@@ -35,7 +35,7 @@ Configure as MCP server in your editor settings:
       "args": [],
       "env": {
         "CLICKHOUSE_HOST": "localhost",
-        "CLICKHOUSE_PORT": "9000", 
+        "CLICKHOUSE_PORT": "9000",
         "CLICKHOUSE_DATABASE": "default",
         "CLICKHOUSE_USERNAME": "default",
         "CLICKHOUSE_PASSWORD": "",
@@ -57,21 +57,23 @@ Parameters:
 
 ### ClickHouse Tools
 
-#### clickhouse-env-query
-Execute SQL queries using environment configuration.
+All ClickHouse tools use connection parameters from environment variables (configured in your editor settings).
+
+#### clickhouse-query
+Execute SQL queries against ClickHouse database.
 
 Parameters:
 - `query` (required): SQL query (SELECT/SHOW/DESCRIBE only)
 - `limit` (optional): Max rows (1-1000, default: 100)
 
-#### clickhouse-env-schemas
-List available databases.
+#### clickhouse-schemas
+List available databases in the ClickHouse instance.
 
-#### clickhouse-env-tables
+#### clickhouse-tables
 List tables in a database.
 
 Parameters:
-- `database` (optional): Database name (uses env default if not specified)
+- `database` (optional): Database name (uses CLICKHOUSE_DATABASE if not specified)
 
 ## Security
 
